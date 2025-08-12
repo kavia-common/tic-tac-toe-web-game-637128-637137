@@ -1,0 +1,130 @@
+:root {
+  --primary: #1976D2;
+  --secondary: #424242;
+  --accent: #FFC107;
+  --background: #ffffff;
+  --text: #000000;
+  --border: #e0e0e0;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+  padding: 20px;
+  color: var(--text);
+}
+
+.game-header {
+  margin-bottom: 30px;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.score-item {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.square {
+  aspect-ratio: 1;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--secondary);
+}
+
+.square:hover {
+  border-color: var(--primary);
+}
+
+.square.highlighted {
+  background-color: var(--accent);
+  color: white;
+}
+
+.square.winner {
+  background-color: var(--primary);
+  color: white;
+}
+
+.game-status {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.game-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--primary);
+  color: white;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.button.secondary {
+  background-color: var(--secondary);
+}
+
+@media (max-width: 480px) {
+  .board {
+    max-width: 300px;
+  }
+  
+  .square {
+    font-size: 2rem;
+  }
+  
+  .score-board {
+    font-size: 1rem;
+    gap: 20px;
+  }
+  
+  .game-status {
+    font-size: 1.2rem;
+  }
+  
+  .button {
+    padding: 8px 16px;
+  }
+}
